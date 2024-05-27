@@ -47,12 +47,16 @@ public partial class BairroPorCidades : ContentPage
 
             Cidade cidade_selecionada = disparador.SelectedItem as Cidade;
 
-            List<Cidade> arr_bairro = await DataService.GetBairrosByIdCidade(cidade_selecionada.id_cidade);
+            List<Bairro> arr_bairro = await DataService.GetBairrosByIdCidade(cidade_selecionada.id_cidade);
 
             lista_bairro.Clear();
 
-            arr_bairro.ForEach(i=> lista_bairro.Add)
+            arr_bairro.ForEach(i => lista_bairro.Add(i));
 
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Ops", ex.Message, "OK");
         }
 
     }
