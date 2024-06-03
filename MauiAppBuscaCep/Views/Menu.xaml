@@ -15,14 +15,14 @@
                     Text="Buscar Cep" Clicked="Button_Clicked" />
 
             <Button Grid.Row="1" Grid.Column="1"
-                    Text="Buscar Cidade" />
+                    Text="Buscar Cidade" Clicked="Button_Clicked_1" />
 
-            <Button Grid.Row="2" Grid.Column="1"
-                    Text="Buscar ruas do bairro" />
+            <Button Grid.Row="2" Grid.Column="0"
+                    Text="Buscar ruas do bairro" Clicked="Button_Clicked_2" />
 
             <Button Grid.Row="2" Grid.Column="1"
                     Text="Buscar endereço pelo cep" 
-                    Clicked="Button_Clicked_1"/>
+                    Clicked="Button_Clicked_3"/>
         </Grid>
         
         

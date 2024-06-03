@@ -16,7 +16,7 @@ namespace MauiAppBuscaCep.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string json = response.Content.ReadAsStringAsync().Result();
+                    string json = response.Content.ReadAsStringAsync().Result;
 
                     end = JsonConvert.DeserializeObject<Endereco>(json);
                 }
@@ -39,7 +39,7 @@ namespace MauiAppBuscaCep.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    using JsonArrayAttribute = response.Content.ReadAsStringAsync().Result;
+                    string json = response.Content.ReadAsStringAsync().Result;
                     arr_bairros = JsonConvert.DeserializeObject<List<Bairro>>(json);
                 }
                 else throw new Exception(response.RequestMessage.Content.ToString());
@@ -74,7 +74,7 @@ namespace MauiAppBuscaCep.Services
 
             using (HttpClient client = new HttpClient()) 
             {
-                HttpResponseMessage response = await client.GetAsync()("https://cep.metoda.com.br/logadouro/by=bairro?Id_cidade=" + id_cidade + "Bairro" + bairro);
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/logadouro/by=bairro?Id_cidade=" + id_cidade + "Bairro" + bairro);
 
                 if (response.IsSuccessStatusCode) 
                 {

@@ -8,6 +8,6 @@ namespace MauiAppBuscaCep.Models
 {
     public class Bairro
     {
-        public string descricao bairro { get; set;}
+        public string descricao_bairro { get; set; }
     }
 }

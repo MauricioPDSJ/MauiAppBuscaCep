@@ -17,14 +17,14 @@
                     <Picker.Items>
                         <x:String>SP</x:String>
                         <x:String>MG</x:String>
-                        <x:String>SP</x:String>
+                        <x:String></x:String>
                     </Picker.Items>
                     
                 </Picker>
 
                 <Picker x:Name="pck_cidade"
                         SelectedIndexChanged="pck_cidade_SelectedIndexChanged"
-                        ItemDisplayBinding="{Biding descricao}"
+                        ItemDisplayBinding="{Binding descricao}"
                         Title="Selecione a Cidade">
                     
                 </Picker>
@@ -50,21 +50,22 @@
 
         <StackLayout x:Name="Carregando"
                      IsVisible="False"
-                     AbsoluteLayout.LayoutBounds="0,5,0.5,-1,-1">
-            <Frame Opacity="0.95"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5,0.5, -1,  -1"/>
+        <Frame Opacity="0.95"
                    BackgroundColor="#333"
                    CornerRadius="10"
                    BorderColor="#00A54F"
                    Padding="80">
-                <StackLayout>
-                    <ActivityIndicator IsRunning="True"
+            <StackLayout>
+                <ActivityIndicator IsRunning="True"
                                        Color="#00A54F"/>
-                    <Label Text="Carregando. . ."
+                <Label Text="Carregando. . ."
                            HorizontalOptions="Center"
                            TextColor="#00A54F"/>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
+            </StackLayout>
+        </Frame>
+
     </AbsoluteLayout>
 
 
